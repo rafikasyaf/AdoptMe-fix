@@ -1,0 +1,17 @@
+      <nav class="nav-login" role="navigation" >
+        @if(!(\Auth::check()))
+        <li><a href="#" role="button" data-toggle="modal" data-target="#login-modal">Log In</a></li>
+         @else
+        <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i></a>
+            <ul class="dropdown-menu settings-menu">
+                 <li>{{\Auth::user()->name}}</li>
+                <li><a href="{{url('logout')}}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+            </ul>
+        </li>
+
+       <!--  @if(!(\Auth::check()))
+        <li><a href="#" role="button" data-toggle="modal" data-target="#login-modal">Log In</a></li>
+        @else
+        {{\Auth::user()->name}} | <a href="{{url('logout')}}">Logout</a> -->
+        @endif
+      </nav>
